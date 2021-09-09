@@ -1,0 +1,35 @@
+<section class="head-filter-select">
+  <div class="container">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="row">
+        <div class="col">
+          <select class="form-select" [(ngModel)]="selectedBrand" (change)="valueSelected()" formControlName="brand">
+            <option selected>brand</option>
+            <option *ngFor="let name of brandName">{{name}}</option>
+          </select>
+        </div>
+<!--select-->
+        <div class="col">
+          <select class="form-select" formControlName="model">
+            <option selected>model</option>
+            <option *ngFor="let model of models">{{model}}</option>
+          </select>
+        </div>
+<!--select-->
+        <div class="col">
+          <select class="form-select" formControlName="age">
+            <option selected>age</option>
+            <option [ngValue]="1">One</option>
+          </select>
+        </div>
+<!--select-->
+        <div class="col">
+          <button class="btn-edit btn btn-outline-primary"
+                  [disabled]="this.form.invalid"
+                  type="submit"
+          >Find</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

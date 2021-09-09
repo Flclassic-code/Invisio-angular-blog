@@ -1,0 +1,25 @@
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Model</th>
+      <th scope="col">Age</th>
+      <th scope="col"><button type="button" class="btn btn-outline-primary btn-sm">Add</button></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let car of cars; let idx = index">
+      <th scope="row">{{idx + 1}}</th>
+      <td>{{car.brand}}</td>
+      <td>{{car.model}}</td>
+      <td>{{car.age}}</td>
+      <td>
+        <button type="button" class="btn-edit btn btn-outline-primary btn-sm">Edit</button>
+        <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
