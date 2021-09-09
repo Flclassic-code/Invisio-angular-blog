@@ -10,7 +10,7 @@
         </div>
 <!--select-->
         <div class="col">
-          <select class="form-select" formControlName="model">
+          <select class="form-select" [(ngModel)]="selectedModel" formControlName="model">
             <option selected>model</option>
             <option *ngFor="let model of models">{{model}}</option>
           </select>
@@ -19,7 +19,7 @@
         <div class="col">
           <select class="form-select" formControlName="age">
             <option selected>age</option>
-            <option [ngValue]="1">One</option>
+            <option *ngFor='let key of 2021 | numberLoop'>{{key}}</option>
           </select>
         </div>
 <!--select-->

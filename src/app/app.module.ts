@@ -6,14 +6,16 @@ import { TableComponent } from './table/table.component';
 import {RouterModule} from '@angular/router';
 import { FilterComponent } from './filter/filter.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NumberLoop} from './pipe/number-loop';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TableComponent,
-    FilterComponent,
-  ],
+    declarations: [
+        AppComponent,
+        TableComponent,
+        FilterComponent,
+        NumberLoop,
+    ],
     imports: [
         BrowserModule, RouterModule, ReactiveFormsModule, FormsModule
     ],

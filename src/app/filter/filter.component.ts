@@ -21,6 +21,7 @@ export class FilterComponent implements OnInit {
   models = [];
   isDisabled = true;
   public selectedBrand;
+  public selectedModel;
 
   form = new FormGroup({
     brand: new FormControl('', [Validators.required]),
