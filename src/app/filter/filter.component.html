@@ -17,7 +17,7 @@
         </div>
 <!--select-->
         <div class="col">
-          <select class="form-select" formControlName="age">
+          <select class="form-select" [(ngModel)]="selectedAge" formControlName="age">
             <option selected>age</option>
             <option *ngFor='let key of 2021 | numberLoop'>{{key}}</option>
           </select>

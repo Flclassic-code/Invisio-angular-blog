@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ListCars} from '../shared/list-cars.service';
 import {BrandsCarsService} from '../shared/brands-cars.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,8 @@ import {BrandsCarsService} from '../shared/brands-cars.service';
 export class FilterComponent implements OnInit {
   constructor(
     private brandsCars: BrandsCarsService,
-    private listCars: ListCars
+    private listCars: ListCars,
+    private router: Router
   ) { }
   brandName = {};
   cars = [];
@@ -22,6 +24,7 @@ export class FilterComponent implements OnInit {
   isDisabled = true;
   public selectedBrand;
   public selectedModel;
+  public selectedAge;
 
   form = new FormGroup({
     brand: new FormControl('', [Validators.required]),
@@ -36,6 +39,7 @@ export class FilterComponent implements OnInit {
 
   submit(){
     console.log(this.form.value);
+    this.router.navigate([], { queryParams: { brand: `${this.selectedBrand}`, model: `${this.selectedModel}`, age: `${this.selectedAge}`}});
   }
 
   public valueSelected(){

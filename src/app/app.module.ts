@@ -8,6 +8,7 @@ import { FilterComponent } from './filter/filter.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NumberLoop} from './pipe/number-loop';
 
+const routes = [];
 
 @NgModule({
     declarations: [
@@ -17,7 +18,7 @@ import {NumberLoop} from './pipe/number-loop';
         NumberLoop,
     ],
     imports: [
-        BrowserModule, RouterModule, ReactiveFormsModule, FormsModule
+        BrowserModule, RouterModule.forRoot(routes), ReactiveFormsModule, FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
